@@ -1,0 +1,80 @@
+<br>
+<div class="container">
+   
+    <section id="cover" >
+        <div id="cover-caption">
+        <div class="container" >
+            <div class="col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto form p-4" style="background-color: rgba(143, 212, 233, 0.349);">
+                <div class="text-center"><h1>Employee Form</h1> </div><br>
+        <form #login="ngForm" (ngSubmit)="submit(login)" >
+            <div class="mb-3">
+                <label for="employeeName " class="form-label commonStyle" >Employee Name</label>
+                <input #name="ngModel" minlength="3" type="text" required  class="form-control " name="employeeName" id="employeeName" placeholder="Tony Stark"  ngModel>
+                <div *ngIf="name.invalid && (name.dirty || name.touched)"
+                class="alert alert-danger">
+            
+              <div *ngIf="name.errors?.['required']">
+                Name is required.
+              </div>
+              <div *ngIf="name.errors?.['minlength']">
+                Name must be at least 4 characters long.
+              </div>
+            
+            </div>
+            </div>
+            <div class="mb-3">
+                <label for="employeeEmail " class="form-label commonStyle" >Employee Email</label>
+                <input #employeeEmail="ngModel" type="text" required class="form-control " name="employeeEmail"  id="employeeEmail" placeholder="tonystark@starkenterprises.com" ngModel>
+                <div
+                *ngIf="employeeEmail.errors &&  (employeeEmail.dirty || employeeEmail.touched)"
+                class="alert alert-danger">
+                <div *ngIf="employeeEmail.errors?.['required']">
+                  Email is required.
+                </div>
+                
+              </div>
+            </div>
+            <div class="mb-3">
+                <label for="employeePhone " class="form-label commonStyle" >Employee Phone Number</label>
+                <input #mobNumber="ngModel" pattern="^((\\+91-?)|0)?[0-9]{10}$" type="text" required minlength="10" maxlength="12" class="form-control " name="employeePhone" id="employeePhone" placeholder="212-970-4133" ngModel>
+                <div
+                *ngIf="mobNumber.errors &&  (mobNumber.dirty || mobNumber.touched)"
+                class="alert alert-danger">
+                <div *ngIf="mobNumber.errors?.['required']">
+                  Mobile number is required.
+                </div>
+                
+              </div>
+            </div>
+            <div class="mb-3">
+                <label for="employeeDob " class="form-label commonStyle" >Employee DOB</label>
+                <input #dob="ngModel" type="date" required class="form-control " name="employeeDob" id="employeeDob" placeholder="29 May 1970" ngModel>
+                <div
+                *ngIf="dob.errors &&  (dob.dirty || dob.touched)"
+                class="alert alert-danger">
+                <div *ngIf="dob.errors?.['required']">
+                  DOB is required.
+                </div>
+                
+              </div>
+            </div>
+            <div class="mb-3">
+                <label for="employeeAddress " class="form-label commonStyle" >Employee Address</label>
+                <input #address="ngModel" type="text" required class="form-control " name="employeeAddress" id="employeeAddress" placeholder="10880 Malibu Point"  ngModel>
+                <div
+                *ngIf="address.errors &&  (address.dirty || address.touched)"
+                class="alert alert-danger">
+                <div *ngIf="address.errors?.['required']">
+                  Address is required.
+                </div>
+                
+              </div>
+            </div>
+            <div class="text-center">
+           <button class="btn2 " type="submit">Submit</button></div>
+        </form>
+    </div>
+</div>
+</div>
+    </section>
+</div>
