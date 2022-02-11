@@ -1,6 +1,8 @@
 
  <div class="container">
-    <br>
+   <br>
+   <div class="text-center">
+   <pagination-controls (pageChange)="p = $event"></pagination-controls></div>
     <table class="table table-striped table-hover table-dark">
   <thead>
     <tr>
@@ -13,13 +15,12 @@
   
   <tbody>
    
-    <tr *ngFor = "let post of posts ">
+    <tr *ngFor = "let post of posts | paginate: { itemsPerPage: 10, currentPage: p }">
       <th scope="row">{{post.userId}}</th>
       <td>{{post.id}}</td>
       <td>{{post.title}}</td>
       <td>{{post.body}}</td>
     </tr>
-    
   </tbody>
  
 </table>

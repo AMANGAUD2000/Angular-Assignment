@@ -8,7 +8,7 @@ import { PostService } from '../post.service';
 })
 export class PostsComponent implements OnInit {
   public posts: any=[];
-
+  p: number = 1;
   public errorMsg:any;
   constructor(private _postService: PostService) { }
   
